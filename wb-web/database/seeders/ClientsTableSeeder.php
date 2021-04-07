@@ -18,7 +18,8 @@ class ClientsTableSeeder extends Seeder
             'name' => 'Assy-Soft',
             'phone' => '+32471144141',
             'fax' => '056255114',
-            'vat' => 'BE5142 52 25 22'
+            'vat' => 'BE5142 52 25 22',
+            'address_id' => 1
         ]);
     }
 }
