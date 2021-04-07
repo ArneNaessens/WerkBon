@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// Clients API
 Route::get('clients', [ClientController::class, 'index']);
 Route::get('clients/{id}', [ClientController::class, 'show']);
 Route::put('clients/{id}', [ClientController::class, 'update']);
