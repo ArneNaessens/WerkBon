@@ -14,7 +14,7 @@ class ClientsHelper
 
     public static function show($id)
     {
-        return Client::findOrFail($id);
+        return Client::with('address')->findOrFail($id);
     }
 
     public static function create($data)
