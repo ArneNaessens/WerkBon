@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ClientController;
 use App\Models\Client;
 use Illuminate\Http\Request;
@@ -28,3 +29,10 @@ Route::get('clients/{id}', [ClientController::class, 'show']);
 Route::put('clients/{id}', [ClientController::class, 'update']);
 Route::post('clients', [ClientController::class, 'create']);
 Route::delete('clients/{id}', [ClientController::class, 'destroy']);
+
+// Addresses API
+Route::get('addresses', [AddressController::class, 'index']);
+Route::get('addresses/{id}', [AddressController::class, 'show']);
+Route::put('addresses/{id}', [AddressController::class, 'update']);
+Route::post('addresses', [AddressController::class, 'create']);
+Route::delete('addresses/{id}', [AddressController::class, 'destroy']);
