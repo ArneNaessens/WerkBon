@@ -16,7 +16,7 @@ class AddAddressToClientsTable extends Migration
         Schema::table('clients', function (Blueprint $table) {
             $table->unsignedBigInteger('address_id')->nullable();
 
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');;
         });
     }
 
