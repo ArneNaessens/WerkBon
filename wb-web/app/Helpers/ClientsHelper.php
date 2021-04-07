@@ -17,35 +17,32 @@ class ClientsHelper
         return Client::findOrFail($id);
     }
 
-    public static function store($data)
+    public static function create($data)
     {
-        $client = new Client([
-            'name' => $data->name,
-            'phone' => $data->phone,
-            'vat' => $data->vat
-        ]);
+        // $client = new Client([
+        //     'name' => $data->name,
+        //     'phone' => $data->phone,
+        //     'vat' => $data->vat
+        // ]);
 
-        $client->save();
-        return $client;
+        // $client->save();
+        // return $client;
+        return Client::firstOrCreate($data);
     }
 
-    public static function update($data)
+    public static function update($data, $id)
     {
-        $client = Client::find($data->id);
-
-        $client->name = $data->name;
-        $client->phone = $data->phone;
-        $client->vat = $data->vat;
-
+        $client = Client::findOrFail($id);
+        $client->update($data);
         $client->save();
         return $client;
     }
 
     public static function destroy($id)
     {
-        $client = Client::findOrFail($id);
 
-        $client->destroy();
-        return 204;
+        $client = Client::findOrFail($id);
+        $client->delete();
+        return response(204);
     }
 }
