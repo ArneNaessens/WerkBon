@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ItemController;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,10 @@ Route::get('addresses/{id}', [AddressController::class, 'show']);
 Route::put('addresses/{id}', [AddressController::class, 'update']);
 Route::post('addresses', [AddressController::class, 'create']);
 Route::delete('addresses/{id}', [AddressController::class, 'destroy']);
+
+// Addresses API
+Route::get('items', [ItemController::class, 'index']);
+Route::get('items/{id}', [ItemController::class, 'show']);
+Route::put('items/{id}', [ItemController::class, 'update']);
+Route::post('items', [ItemController::class, 'create']);
+Route::delete('items/{id}', [ItemController::class, 'destroy']);
